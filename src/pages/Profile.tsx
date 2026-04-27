@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useGetMeQuery, useUpdateMeMutation, useChangeMyPasswordMutation } from '../features/auth/authApi';
 import { logout } from '../features/auth/authSlice';
 import Button from '../components/ui/Button';
@@ -9,7 +9,6 @@ import toast from 'react-hot-toast';
 
 const Profile: React.FC = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { data: profileData, isLoading } = useGetMeQuery();
   const [updateMe, { isLoading: isUpdating }] = useUpdateMeMutation();
   const [changeMyPassword, { isLoading: isChangingPassword }] = useChangeMyPasswordMutation();

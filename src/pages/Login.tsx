@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useLoginMutation } from '../features/auth/authApi';
 import { setCredentials } from '../features/auth/authSlice';
@@ -16,7 +16,6 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [login, { isLoading }] = useLoginMutation();
 
